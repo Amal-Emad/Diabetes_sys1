@@ -1,5 +1,4 @@
 
-/* Global Styling */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -8,9 +7,9 @@ body {
     color: white;
 }
 
-/* Navbar Styling */
+
 .navbar {
-    background-color: #005f6ac2; /* Dark Turquoise */
+    background-color: #005f6ac2; 
     position: fixed;
     width: 100%;
     top: 0;
@@ -58,7 +57,7 @@ body {
     margin-left: 20px;
 }
 
-/* Hero Section */
+
 .hero {
    background: url("{{ url_for('static', filename='images/landing.png') }}") no-repeat center center/cover;
     height: 100vh;
@@ -69,7 +68,7 @@ body {
     text-align: center;
     animation: fadeIn 1s;
 }
-/* Add Typewriter Effect for Tagline */
+
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
@@ -160,7 +159,7 @@ p {
     margin-bottom: 30px;
 }
 
-/* Form Styling */
+
 .login {
     max-width: 500px;
     margin: 40px auto;
@@ -193,8 +192,8 @@ p {
 /* Feature Section Styling */
 .features {
 display: flex;
-flex-wrap: wrap; /* Allow boxes to wrap into a new line if needed */
-justify-content: center; /* Center the boxes horizontally */
+flex-wrap: wrap;
+justify-content: center;
 margin-top: 60px;
 text-align: center;
 color: white;
@@ -202,15 +201,15 @@ color: white;
 
 .feature-box {
 background-color: #004D61;
-padding: 20px; /* You can adjust this padding as needed */
+padding: 20px; 
 margin: 15px;
 margin-bottom: 90px;
 border-radius: 10px;
 transition: transform 0.3s, box-shadow 0.3s;
-height: 280px; /* Set a fixed height for all feature boxes */
+height: 280px; 
 display: flex;
-flex-direction: column; /* Stack content vertically */
-justify-content: center; /* Center content vertically */
+flex-direction: column; 
+justify-content: center; 
 }
 
 .feature-box:hover {
@@ -285,7 +284,7 @@ font-weight: 600;
 .social-icons a:hover {
     transform: scale(1.2);
 }
-/* Make form and sections stack vertically on smaller screens */
+
 @media (max-width: 768px) {
 .nav-items {
 flex-direction: column;
