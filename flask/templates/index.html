@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Diabetes System</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+   
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar" id="navbar">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+
+        <div class="nav-items">
+            <a href="#">Home</a>
+            <a href="#about-section">About</a>
+            <a href="#predict-section">Predict</a>
+            <a href="#contact-section">Contact</a>
+            <a href="#notebook-section">Notebook</a>
+        </div>
+        <div class="menu-scroll">
+            <a href="#" class="menu-icon"><i class="fas fa-bars"></i></a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div>
+            <h1> AI Diabetes System</h1>
+            <p>Your first step toward a healthier life</p>
+            <a href="#about-section" class="btn">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <section id="features-section" class="features">
+          <h2>Why Use Diabetes Predictor?</h2>
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="feature-box">
+                      <i class="fas fa-brain"></i>
+                      <h4>AI-Powered Predictions</h4>
+                      <p>We use state-of-the-art AI models to provide you with the most accurate diabetes predictions.</p>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="feature-box">
+                      <i class="fas fa-shield-alt"></i>
+                      <h4>Privacy & Security</h4>
+                      <p>Your data is secure and protected, with no personal information ever shared or stored.</p>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="feature-box">
+                      <i class="fas fa-heart"></i>
+                      <h4>Health Insights</h4>
+                      <p>Get personalized tips and recommendations based on your health information.</p>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      
+      <section id="about-section" class="about">
+        <h2>About Ai Diabetes Predictor</h2>
+        <p>Diabetes Predictor is a web application designed to help you assess your risk for developing diabetes using advanced machine learning models. By entering your basic health information, the app will predict the likelihood of diabetes, allowing you to take proactive measures for your health.</p>
+      </section>
+        <section id="predict-section" class="predict">
+          <h2>Diabetes Prediction Form</h2>
+          <div class="login">
+              <form action="{{ url_for('predict') }}" method="POST">
+                  <div class="form-group">
+                      <input type="number" name="Glucose" placeholder="Glucose Level" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="number" name="Insulin" placeholder="Insulin Level" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="number" name="BMI" placeholder="Body Mass Index" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="number" name="Age" placeholder="Age" required>
+                  </div>
+                  <button type="submit" class="btn-primary">Predict</button>
+              </form>
+          </div>
+      
+          <!-- Display the prediction result here -->
+          {% if prediction_text %}
+          <div class="alert alert-info" style="margin-top: 10px;">
+              <strong>Prediction Result:</strong> {{ prediction_text }}
+          </div>
+          {% endif %}
+      </section>
+      
+      
+    </div>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Amal Alkraimeen. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+    <!-- Include in the body section -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+          });
+      });
+  });
+</script>
+
+</body>
+
+</html>
